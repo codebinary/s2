@@ -1,0 +1,76 @@
+{% extends 'BackendBundle::layout.html.twig' %}
+
+{% block content %}
+
+  <!-- Si el usuario esta autenticado redireccionamos -->
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <script>
+        var url = 'http://localhost/projects/symfonys/sym3/web/app.php/';
+        window.location.href = url + "admin/dashboard";
+    </script>
+  {% endif %}
+    
+    <body>
+
+    {% if app.user != null %}
+        
+    {% endif %}
+
+  <body class="login">
+    
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form action="{{path("login_check")}}" method="post">
+              <h1>Iniciar Sesión</h1>
+              <div>
+                <input  type="text" 
+                      class="form-control" 
+                      placeholder="Username"        
+                      aria-describedby="basic-addon1"
+                      id="username"
+                      name="_username"
+                      value="{{ last_username }}">
+              </div>
+              <div>
+                <input  type="password" 
+                      class="form-control" 
+                      placeholder="Password" 
+                      aria-describedby="basic-addon2"
+                      id="password"
+                      name="_password">
+              </div>
+              <div>
+                <button type="submit" id="btnEnviar" class="btn btn-success">Enviar</button>
+                <!-- <input type="submit" class="btn btn-success" value="Login"> -->
+                <input type="hidden" name="_target_path" value="/admin/dashboard">
+              </div>
+              
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <!-- <p class="change_link">New to site?
+                  <a href="#signup" class="to_register"> Create Account </a>
+                </p> -->
+              
+                <div class="clearfix"></div>
+                <br />
+              
+                <div>
+                  <h1> Centro Cultural CCPUCP</h1>
+                  <p>©2017 Todos los Derechos Reservados. Centro Cultural CCPUCP</p>
+                </div>
+              </div> 
+            </form>
+          </section>
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}
