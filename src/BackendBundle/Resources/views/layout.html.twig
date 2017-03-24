@@ -26,6 +26,9 @@
     <link href="{{ asset('assets/gentella/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('assets/gentella/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+    
+    <!-- bootstrap-dataTables -->
+    <link href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/gentella/build/css/custom.min.css') }}" rel="stylesheet">
@@ -35,7 +38,6 @@
     
 
 </head>
-
     <!-- Inclumos la plantilla del menu -->
     <!-- Realizamos la condicion si estamos loguedos -->
     {% if app.user != null %}
@@ -49,7 +51,7 @@
     {% endblock %}
 
   
-
+    {% if app.user != null %}
     <!-- footer content -->
         <footer>
           <div class="pull-right">
@@ -58,6 +60,9 @@
           <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
+    {% endif %}
+
+
       </div>
     </div>
 	
@@ -120,6 +125,9 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets/gentella/build/js/custom.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/lib/jquery.techbytarun.excelexportjs.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
   {% endblock %}
 
 

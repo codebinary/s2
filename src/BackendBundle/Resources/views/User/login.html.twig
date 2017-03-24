@@ -28,12 +28,13 @@
             <form action="{{path("login_check")}}" method="post">
               <h1>Iniciar Sesión</h1>
               <div>
-                <input  type="text" 
+                <input  type="email" 
                       class="form-control" 
                       placeholder="Username"        
                       aria-describedby="basic-addon1"
                       id="username"
                       name="_username"
+                      required="required" 
                       value="{{ last_username }}">
               </div>
               <div>
@@ -42,6 +43,7 @@
                       placeholder="Password" 
                       aria-describedby="basic-addon2"
                       id="password"
+                      required="required" 
                       name="_password">
               </div>
               <div>
@@ -62,7 +64,7 @@
                 <br />
               
                 <div>
-                  <h1> Centro Cultural CCPUCP</h1>
+                  <h1><img src="http://centroculturalpucp.dev/templates/centrocultural/favicon.ico" >  Centro Cultural CCPUCP</h1>
                   <p>©2017 Todos los Derechos Reservados. Centro Cultural CCPUCP</p>
                 </div>
               </div> 

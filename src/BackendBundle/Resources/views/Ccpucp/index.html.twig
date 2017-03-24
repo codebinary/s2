@@ -1,0 +1,132 @@
+{% extends 'BackendBundle::layout.html.twig' %}
+
+{% block content %}
+
+  <!-- page content -->
+        <div class="right_col" role="main" style="min-height: 949px;">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Unidades CCPUCP</h3>
+              </div>
+        
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <!-- <input type="text" class="form-control" placeholder="Search for..."> -->
+                    <span class="input-group-btn">
+                      <a href="#" id ="export" class="btn btn-success" role='button'>Descargar excel</a>
+                    </span>
+                  </div> 
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Listado de Contactos Formulario CCPUCP</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                     
+                     <!-- <p class="text-muted font-13 m-b-30">
+                      DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>
+                                         </p> -->
+                    <!-- {{dump(data)}} -->
+                    <table id="datatable" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>N*</th>
+                          <th>Nombre de la unidad PUCP</th>
+                          <th>Chartfields a donde se cargará el servicio de alquiler de salas:</th>
+                          <th>Persona responsable del evento</th>
+                          <th>E-mail encargado del evento</th>
+                          <th>Teléfono de la persona encargada</th>
+                          <th>Tipo de evento</th>
+                          <th>Nombre del evento</th>
+                          <th>Fec. inicio evento</th>
+                          <th>Fec. término evento</th>
+                          <th>Hora inicio evento</th>
+                          <th>Hora término evento</th>
+                          <th>Temas a tratar</th>
+                          <th>Expositores</th>
+                          <th>Ingreso evento</th>
+                          <th>Sala tipo auditorio</th>
+                          <th>Directorio (con mesa central y sillas)</th>
+                          <th>Salón de clases (mesas bipersonales con sillas)</th>
+                          <th>Sala con mesas en U</th>
+                          <th>Proyector multimedia y ecran</th>
+                          <th>Pizarra acrílica</th>
+                          <th>DVD</th>
+                          <th>Micrófonos</th>
+                          <th>Mesa de registro</th>
+                          <th>Comentarios</th>
+                          <th>Fecha</th>
+                        </tr>
+                      </thead>
+                    
+
+                      <tbody>
+                        {% for ccpucp in data %}
+                        <tr>
+                          <td>{{loop.index}}</td>
+                          <td>{{ccpucp.txtempresa}}</td>
+                          <td>{{ccpucp.txtchartfields}}</td>
+                          <td>{{ccpucp.txtresponsable}}</td>
+                          <td>{{ccpucp.txtmailresponsable}}</td>
+                          <td>{{ccpucp.txttelresponsable}}</td>
+                          <td>{{ccpucp.txttipevento}}</td>
+                          <td>{{ccpucp.txtnameevento}}</td>
+                          <td>{{ccpucp.txtdateinicevento}}</td>
+                          <td>{{ccpucp.txtdatefinevento}}</td>
+                          <td>{{ccpucp.txtdateinchoraevnt}}</td>
+                          <td>{{ccpucp.txtfindatehoraevent}}</td>
+                          <td>{{ccpucp.txttemas}}</td>
+                          <td>{{ccpucp.txtnombreexpositores}}</td>
+                          <td>{{ccpucp.cboingresoevento}}</td>
+                          <td>{{ccpucp.cbosalatipoauditorio}}</td>
+                          <td>{{ccpucp.cbodirectorio}}</td>
+                          <td>{{ccpucp.cbosalondeclases}}</td>
+                          <td>{{ccpucp.cbosalamesasu}}</td>
+                          <td>{{ccpucp.rdoproyector}}</td>
+                          <td>{{ccpucp.rdopizarra}}</td>
+                          <td>{{ccpucp.rdodvd}}</td>
+                          <td>{{ccpucp.rdomicrofonos}}</td>
+                          <td>{{ccpucp.rdomesaregistroparticipantes}}</td>
+                          <td>{{ccpucp.txtcomentario}}</td>
+                          <td>{{ccpucp.fecha | date('Y-m-d')}}</td>
+                        </tr>
+                        {% endfor %}
+                        
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+    
+{% endblock %}
