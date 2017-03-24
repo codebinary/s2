@@ -82,6 +82,7 @@
                           <th>Mesa de registro</th>
                           <th>Comentarios</th>
                           <th>Fecha</th>
+                          <th></th>
                         </tr>
                       </thead>
                     
@@ -116,6 +117,8 @@
                           <td>{{pucp.rdomesaregistroparticipantes }}</td>
                           <td>{{pucp.txtcomentario }}</td>
                           <td>{{pucp.fecha | date('Y-m-d')}}</td>
+
+                          <td><a href="{{path("backend_admin_delete_pucp", {"id":pucp.id})}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
                         </tr>
                         {% endfor %}
                         

@@ -81,6 +81,7 @@
                           <th>Mesa de registro</th>
                           <th>Comentarios</th>
                           <th>Fecha</th>
+                          <th></th>
                         </tr>
                       </thead>
                     
@@ -114,6 +115,7 @@
                           <td>{{ccpucp.rdomesaregistroparticipantes}}</td>
                           <td>{{ccpucp.txtcomentario}}</td>
                           <td>{{ccpucp.fecha | date('Y-m-d')}}</td>
+                          <td><a href="{{path("backend_admin_delete_ccpucp", {"id":ccpucp.id})}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
                         </tr>
                         {% endfor %}
                         

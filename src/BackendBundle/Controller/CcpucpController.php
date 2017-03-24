@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use BackendBundle\Entity\User;
+use BackendBundle\Entity\Ccpucp;
 use BackendBundle\Form\UserType;
 
 class CcpucpController extends Controller
@@ -24,7 +25,7 @@ class CcpucpController extends Controller
         ));
     }
 
-    public function deleteAction(Request $request){
+    public function deleteAction($id){
 
         $em = $this->getDoctrine()->getEntityManager();
         $ccpucpRepo = $em->getRepository("BackendBundle:Ccpucp");

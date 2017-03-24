@@ -27,7 +27,7 @@ backend_admin_list_ccpucp:
     defaults: {_controller: BackendBundle:Ccpucp:list}
 
 backend_admin_delete_ccpucp:
-    path: /admin/ccpucp/delete
+    path: /admin/ccpucp/delete/{id}
     defaults: {_controller: BackendBundle:Ccpucp:delete}
 
 
@@ -36,7 +36,7 @@ backend_admin_list_pucp:
     defaults: {_controller: BackendBundle:Pucp:list}
 
 backend_admin_delete_pucp:
-    path: /admin/pucp/delete
+    path: /admin/pucp/delete/{id}
     defaults: {_controller: BackendBundle:Pucp:delete}
 
 #backend_homepage:
