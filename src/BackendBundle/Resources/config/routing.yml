@@ -9,35 +9,37 @@ logout:
     path: /logout
 
 backend_admin_dashboard:
-    path: /admin/dashboard
+    path: /dashboard
     defaults: { _controller: BackendBundle:Default:index}
 
 backend_admin_list_user:
-    path: /admin/user/list
+    path: /user/list
     defaults: {_controller: BackendBundle:User:list}
 
 backend_admin_create_user:
-    path: /admin/user/create
+    path: /user/create
     defaults: { _controller: BackendBundle:User:create }
 
-
-
 backend_admin_list_ccpucp:
-    path: /admin/ccpucp/list
+    path: /ccpucp/list
     defaults: {_controller: BackendBundle:Ccpucp:list}
 
 backend_admin_delete_ccpucp:
-    path: /admin/ccpucp/delete/{id}
+    path: /ccpucp/delete/{id}
     defaults: {_controller: BackendBundle:Ccpucp:delete}
 
 
 backend_admin_list_pucp:
-    path: /admin/pucp/list
+    path: /pucp/list
     defaults: {_controller: BackendBundle:Pucp:list}
 
 backend_admin_delete_pucp:
-    path: /admin/pucp/delete/{id}
+    path: /pucp/delete/{id}
     defaults: {_controller: BackendBundle:Pucp:delete}
+
+backend_homepage:
+    path: /
+    defaults: { _controller: BackendBundle:User:login}
 
 #backend_homepage:
 #    path:     /
